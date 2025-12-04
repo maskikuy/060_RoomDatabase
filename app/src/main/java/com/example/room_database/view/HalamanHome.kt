@@ -33,7 +33,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.room.Update
 import com.example.room_database.R
 import com.example.room_database.room.Siswa
 import com.example.room_database.view.route.DestinasiHome
