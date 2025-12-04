@@ -4,16 +4,19 @@ import com.example.room_database.room.Siswa
 import com.example.room_database.room.SiswaDao
 import kotlinx.coroutines.flow.Flow
 
-interface RepositoriSiswa{
+interface RepositoriSiswa {
     fun getAllSiswaStream(): Flow<List<Siswa>>
 
     fun getSiswaStream(id: Int): Flow<Siswa?>
 
-    suspend fun deleteSiswa(siswa: Siswa)
-
 
     suspend fun insertSiswa(siswa: Siswa)
 
+
+    suspend fun deleteSiswa(siswa: Siswa)
+
+
+    suspend fun updateSiswa(siswa: Siswa)
 }
 
 class OfflineRepositoriSiswa(
@@ -27,6 +30,6 @@ class OfflineRepositoriSiswa(
 
     override suspend fun deleteSiswa(siswa: Siswa) = siswaDao.delete(siswa)
 
-    //override suspend fun updateSiswa(siswa: Siswa) = siswaDao.update(siswa)
+    override suspend fun updateSiswa(siswa: Siswa) = siswaDao.update(siswa)
 
 }

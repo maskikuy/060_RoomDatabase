@@ -36,6 +36,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.room_database.R
 import com.example.room_database.room.Siswa
+import com.example.room_database.view.SiswaTopAppBar
 import com.example.room_database.view.route.DestinasiDetailSiswa
 import com.example.room_database.viewmodel.DetailSiswaUiState
 import com.example.room_database.viewmodel.DetailViewModel
@@ -46,7 +47,7 @@ import kotlinx.coroutines.launch
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DetailSiswaScreen(
-    //navigateToEditItem: (Int) -> Unit,
+    navigateToEditItem: (Int) -> Unit,
     navigateBack: () -> Unit,
     modifier: Modifier = Modifier,
     viewModel: DetailViewModel = viewModel(factory = PenyediaViewModel.Factory)
@@ -63,8 +64,8 @@ fun DetailSiswaScreen(
             val uiState = viewModel.uiDetailState.collectAsState()
             FloatingActionButton(
                 onClick = {
-                    //navigateToEditItem(uiState.value.detailSiswa.id)
-                     },
+                    navigateToEditItem(uiState.value.detailSiswa.id)
+                },
                 shape = MaterialTheme.shapes.medium,
                 modifier = Modifier.padding(dimensionResource(id = R.dimen.padding_large))
 
